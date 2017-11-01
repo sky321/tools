@@ -1,0 +1,6 @@
+repo init -u git://github.com/lineageos/android.git -b cm-14.1
+repo sync -c -j 16
+source build/envsetup.sh
+breakfast FP2
+brunch FP2
+

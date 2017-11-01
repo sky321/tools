@@ -1,0 +1,3 @@
+cd lineage/scripts/key-migration/
+
+./export-keys.sh /home/build/android/build/target/product/security >> key.txt

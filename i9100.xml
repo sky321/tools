@@ -1,0 +1,4 @@
+<manifest>
+    <remote fetch="https://github.com/" name="github2" />
+    <project name="TheMuppets/proprietary_vendor_samsung" path="vendor/samsung" remote="github2" revision="cm-14.1" />
+</manifest>
