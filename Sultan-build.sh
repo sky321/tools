@@ -5,6 +5,7 @@
 repo sync -c -j 16
 ./patcher/patcher.sh
 source build/envsetup.sh
+mka clean
 breakfast oneplus3
 pause
 brunch oneplus3
