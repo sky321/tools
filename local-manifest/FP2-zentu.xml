@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote fetch="https://github.com/" name="github2" />
+  <project name="chrmhoffmann/android_device_fairphone_FP2" path="device/fairphone/FP2" remote="github2" revision="cm-14.1" />
+  <project name="chrmhoffmann/android_kernel_fairphone_msm8974" path="kernel/fairphone/msm8974" remote="github2" revision="cm-14.1" />
+  <project name="chrmhoffmann/proprietary_vendor_fairphone" path="vendor/fairphone/FP2" remote="github2" revision="cm-14.1" />
+</manifest>

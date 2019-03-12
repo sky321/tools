@@ -1,0 +1,9 @@
+<manifest>
+	<remote fetch="https://github.com/" name="github2" />
+	<project name="LineageOS/android_device_fairphone_FP2" path="device/fairphone/FP2" remote="github2" revision="cm-14.1" />
+	<project name="LineageOS/android_kernel_fairphone_msm8974" path="kernel/fairphone/msm8974" remote="github2" revision="cm-14.1" />
+	<project name="FairBlobs/proprietary_vendor_fairphone-fork" path="vendor/fairphone/FP2" remote="github2" revision="cm-14.1" />
+	<project name="LineageOS/android_device_qcom_common" path="device/qcom/common" remote="github2" revision="cm-14.1" />
+</manifest>
+
+
