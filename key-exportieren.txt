@@ -1,3 +1,8 @@
 cd lineage/scripts/key-migration/
 
+
+use migration.sh for input of key to build a update_binary
+
+
+OLD VERSION
 ./export-keys.sh /home/build/android/build/target/product/security >> key.txt
