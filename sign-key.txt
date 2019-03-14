@@ -1,3 +1,0 @@
-https://wiki.lineageos.org/signing_builds.html
-
-https://source.android.com/devices/tech/ota/sign_builds

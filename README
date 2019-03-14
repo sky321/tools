@@ -1,0 +1,27 @@
+Build Lineage on Docker
+
+- Tools repo clonen
+	- git clone https://github.com/sky321/tools.git
+		keygen.sh = erstellt eigene keys um damit die imgages zu sign 
+			(common.mk update um beim bauen schon zu sign)
+		sign-img.sh = nachträglich sign der images mit eigenen keys
+		build.sh = repo sync und build des images
+		lineage-test2official.zip = migration von test zu orfficial
+		lineage-official2test.zip = migration von official zu test
+			update-binary = script um key zu überschreiben
+			key-exportieren.txt = how to export the keys
+		lvm.txt = ist die platte mal voll 
+		local_manifests = ordner mit verschiedenen manifest.xml
+		docker-init.sh = baut docker container zum bauen der images
+- Docker Container bauen
+	Mit docker-init.sh aus tools
+	- git clone https://github.com/sky321/docker-lineageos.git
+	- cd docker-lineageos
+	- ./run.sh
+- repo initialisieren
+	- repo init -u git://github.com/LineageOS/android.git -b lineage-15.1
+
+
+Infos zu sign der keys auf AOSP und Lineage
+https://wiki.lineageos.org/signing_builds.html
+https://source.android.com/devices/tech/ota/sign_builds
