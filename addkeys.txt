@@ -1,0 +1,4 @@
+ if [ "$SIGN_BUILDS" = true ]; then
+      echo ">> [$(date)] Adding keys path ($KEYS_DIR)"
+      sed -i "1s;^;PRODUCT_DEFAULT_DEV_CERTIFICATE := $KEYS_DIR/releasekey\nPRODUCT_OTA_PUBLIC_KEYS := $KEYS_DIR/releasekey\nPRODUCT_EXTRA_RECOVERY_KEYS := $KEYS_DIR/releasekey\n\n;" "vendor/$vendor/config/common.mk"
+fi

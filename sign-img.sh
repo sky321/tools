@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # gen target files
+source build/envsetup.sh
 breakfast oneplus3
 mka target-files-package otatools
 
