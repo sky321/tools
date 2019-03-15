@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KEYS_DIR=/home/build/android/.android-cert
+KEYS_DIR=/home/build/android/.android-certs
 OUT=/home/build/android/out/target/product/oneplus3
 
 # gen target files (only if not run direct after build)
