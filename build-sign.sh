@@ -1,15 +1,32 @@
 #!/bin/bash
 
+# Build LAOS for Oneplus 3/3T
+cd /home/build/android/
+pwd
+
+repo sync -c -j 16
+[ $? -ne 0 ] && { echo "Error at repo sync"; exit 1; }
+
+source build/envsetup.sh
+mka clean
+[ $? -ne 0 ] && { echo "Error at make clean"; exit 1; }
+
+#tristate button & Gallery2
+#repopick 215212 -f
+
+breakfast oneplus3
+#brunch oneplus3
+
 KEYS_DIR=/home/build/android/.android-cert
 OUT=/home/build/android/out/target/product/oneplus3
 
 # gen target files (only if not run direct after build)
 #source build/envsetup.sh
 #breakfast oneplus3
-#mka target-files-package otatools
+mka target-files-package otatools
 # oder auch
 #mka target-files-package dist
-#[ $? -ne 0 ] && { echo "Error at make target files"; exit 1; }
+[ $? -ne 0 ] && { echo "Error at make target files"; exit 1; }
 
 # sign all the APKs
 croot
