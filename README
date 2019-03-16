@@ -5,26 +5,32 @@ Build Lineage on Docker
 		keygen.sh = erstellt eigene keys um damit die imgages zu sign 
 			(common.mk update um beim bauen schon zu sign - dev-keys)
 		sign-img.sh = nachträglich sign der images mit eigenen keys (release-keys)
-		build.sh = repo sync und build des images
-		lineage-test2official.zip = migration von test zu orfficial
+		build.sh = repo sync und build des images (std)
+		build-sign.sh = repo sync und build des images (signed image)
+		lineage-test2official.zip = migration von test zu official
 		lineage-official2test.zip = migration von official zu test
 			update-binary = script um key zu überschreiben
 			key-exportieren.txt = how to export the keys
 		lvm.txt = ist die platte mal voll 
 		local_manifests = ordner mit verschiedenen manifest.xml
 			ordner in .repo erstellen und passendes xml rein kopieren
-		docker-init.sh = baut docker container zum bauen der images
-- Docker Container bauen
+		docker-init.sh = erstellt docker container zum bauen der images
+
+- Docker Container erstellen
 	Mit docker-init.sh aus tools
 	- git clone https://github.com/sky321/docker-lineageos.git
 	- cd docker-lineageos
 	- sudo ./run.sh
+
 - repo initialisieren
 	- repo init -u git://github.com/LineageOS/android.git -b lineage-15.1
+
 - build lineageOS image to install
-	- ./build.sh
-- sign ota image if needed
-	- sign-img.sh
+	- ./build-sign.sh (erstellt signed image)
+		voraussetzung: keygen.sh
+	- ./build.sh (std build)
+		ohne keygen.sh und sign-img.sh = test-keys
+		mit keygen.sh = dev-keys
 
 
 Infos zu sign der keys auf AOSP und Lineage

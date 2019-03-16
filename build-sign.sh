@@ -11,18 +11,14 @@ source build/envsetup.sh
 mka clean
 [ $? -ne 0 ] && { echo "Error at make clean"; exit 1; }
 
-#tristate button & Gallery2
-#repopick 215212 -f
-
 breakfast oneplus3
-#brunch oneplus3
 
 KEYS_DIR=/home/build/android/.android-certs
 OUT=/home/build/android/out/target/product/oneplus3
+TARGET_FILES_SIGNED=lineage-$(get_build_var LINEAGE_VERSION)-signed-target_files.zip
+OTA_PACKAGE=lineage-$(get_build_var LINEAGE_VERSION)-install.zip
 
 # gen target files (only if not run direct after build)
-#source build/envsetup.sh
-#breakfast oneplus3
 mka target-files-package otatools
 # oder auch
 #mka target-files-package dist
@@ -30,8 +26,10 @@ mka target-files-package otatools
 
 # sign all the APKs
 croot
-./build/tools/releasetools/sign_target_files_apks -o -d $KEYS_DIR $OUT/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip signed-target_files.zip
+#./build/tools/releasetools/sign_target_files_apks -o -d $KEYS_DIR $OUT/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip signed-target_files.zip
+./build/tools/releasetools/sign_target_files_apks -o -d $KEYS_DIR $OUT/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $TARGET_FILES_SIGNED
 [ $? -ne 0 ] && { echo "Error at sign APKs"; exit 1; }
 
 # generate the signed installable OTA zip
-./build/tools/releasetools/ota_from_target_files -k $KEYS_DIR/releasekey --block --backup=true signed-target_files.zip signed-ota_update.zip
+#./build/tools/releasetools/ota_from_target_files -k $KEYS_DIR/releasekey --block --backup=true signed-target_files.zip signed-ota_update.zip
+./build/tools/releasetools/ota_from_target_files -k $KEYS_DIR/releasekey --block --backup=true $TARGET_FILES_SIGNED $OTA_PACKAGE
