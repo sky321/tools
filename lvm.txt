@@ -1,5 +1,8 @@
 https://www.thomas-krenn.com/de/wiki/LVM_vergr%C3%B6%C3%9Fern
 
+---> Beim Platten erweitern unter VMware lieber mehrere Platten mit LVM zusammenfassen als eine Große
+
+
 partition new space
  1170  cfdisk
 physisches volumen anlegen

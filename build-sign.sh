@@ -20,16 +20,12 @@ OTA_PACKAGE=lineage-$(get_build_var LINEAGE_VERSION)-install.zip
 
 # gen target files (only if not run direct after build)
 mka target-files-package otatools
-# oder auch
-#mka target-files-package dist
 [ $? -ne 0 ] && { echo "Error at make target files"; exit 1; }
 
 # sign all the APKs
 croot
-#./build/tools/releasetools/sign_target_files_apks -o -d $KEYS_DIR $OUT/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip signed-target_files.zip
 ./build/tools/releasetools/sign_target_files_apks -o -d $KEYS_DIR $OUT/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $TARGET_FILES_SIGNED
 [ $? -ne 0 ] && { echo "Error at sign APKs"; exit 1; }
 
 # generate the signed installable OTA zip
-#./build/tools/releasetools/ota_from_target_files -k $KEYS_DIR/releasekey --block --backup=true signed-target_files.zip signed-ota_update.zip
 ./build/tools/releasetools/ota_from_target_files -k $KEYS_DIR/releasekey --block --backup=true $TARGET_FILES_SIGNED $OTA_PACKAGE
