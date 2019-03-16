@@ -3,7 +3,7 @@ Build Lineage on Docker
 - Tools repo clonen
 	- git clone https://github.com/sky321/tools.git
 		keygen.sh = erstellt eigene keys um damit die imgages zu sign 
-			(common.mk update um beim bauen schon zu sign - dev-keys)
+			(common.mk update um mit eigenen keys zu bauen - dev-keys)
 		sign-img.sh = nachträglich sign der images mit eigenen keys (release-keys)
 		build.sh = repo sync und build des images (std)
 		build-sign.sh = repo sync und build des images (signed image)
