@@ -16,7 +16,7 @@ breakfast oneplus3
 KEYS_DIR=/home/build/android/.android-certs
 OUT=/home/build/android/out/target/product/oneplus3
 TARGET_FILES_SIGNED=lineage-$(get_build_var LINEAGE_VERSION)-signed-target_files.zip
-OTA_PACKAGE=lineage-$(get_build_var LINEAGE_VERSION)-install.zip
+OTA_PACKAGE=lineage-$(get_build_var LINEAGE_VERSION)-signed.zip
 
 # gen target files (only if not run direct after build)
 mka target-files-package otatools
