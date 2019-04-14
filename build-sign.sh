@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # Build LAOS for Oneplus 3/3T
+START=$(date)
+
 cd /home/build/android/
 pwd
 
@@ -29,3 +31,7 @@ croot
 
 # generate the signed installable OTA zip
 ./build/tools/releasetools/ota_from_target_files -k $KEYS_DIR/releasekey --block --backup=true $TARGET_FILES_SIGNED $OTA_PACKAGE
+
+END=$(date)
+echo "Start: $START"
+echo "Ende : $END"
