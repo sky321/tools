@@ -2,6 +2,7 @@
 
 # Build LAOS for Oneplus 3/3T
 START=$(date)
+SECONDS=0
 
 cd /home/build/android/
 pwd
@@ -33,5 +34,8 @@ croot
 ./build/tools/releasetools/ota_from_target_files -k $KEYS_DIR/releasekey --block --backup=true $TARGET_FILES_SIGNED $OTA_PACKAGE
 
 END=$(date)
+elapsedseconds=$SECONDS
 echo "Start: $START"
 echo "Ende : $END"
+echo "Duration:"
+TZ=UTC0 printf '%(%H:%M:%S)T\n' "$elapsedseconds"
