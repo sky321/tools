@@ -23,7 +23,11 @@
 		- sudo ./run.sh
 
 - repo initialisieren
-	- repo init -u git://github.com/LineageOS/android.git -b lineage-15.1
+	- repo init -u git://github.com/LineageOS/android.git -b lineage-16.0
+	- copy local_manifests to .repo with relevant .xml
+
+- only build lineageOS 
+	- ./build.sh (first test to run)
 
 - build lineageOS image to install
 	- ./keygen.sh (run only once!)
