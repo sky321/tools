@@ -2,24 +2,31 @@ https://www.thomas-krenn.com/de/wiki/LVM_vergr%C3%B6%C3%9Fern
 
 ---> Beim Platten erweitern unter VMware lieber mehrere Platten mit LVM zusammenfassen als eine Groﬂe
 
+sudo -s
+#neue platte finden
+	lshw -C disk
 
-partition new space
- 1170  cfdisk
-physisches volumen anlegen
- 1171  pvs
- 1172  pvcreate /dev/sda4
- 1173  pvs
-virtual group erweitern
- 1174  vgs
- 1175  vgextend localhost-vg /dev/sda4
- 1176  vgs
-logische group erweitern
- 1177  lvs
- 1178  df -h
- 1179  lvextend -l +100%FREE /dev/mapper/localhost--vg-root
- 1180  lvs
-filesystem erweitern
- 1181  df -h
- 1182  resize2fs -p /dev/mapper/localhost--vg-root
- 1183  df -h
+#partition new space
+	cfdisk /dev/sdxxxxx
+		- partitionieren (neu)
 
+#physisches volumen anlegen
+	pvs
+	pvcreate /dev/sdxxxxx
+	pvs
+
+#virtual group erweitern
+	vgs
+	vgextend localhost-vg /dev/sdxxxxx
+	vgs
+
+#logische group erweitern
+	lvs
+	df -h
+	lvextend -l +100%FREE /dev/mapper/localhost--vg-root
+	lvs
+	
+#filesystem erweitern
+	df -h
+	resize2fs -p /dev/mapper/localhost--vg-root
+	df -h
