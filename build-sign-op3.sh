@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Build LAOS for different devices
+# Build LAOS for Oneplus 3/3T
 START=$(date)
 SECONDS=0
 
@@ -14,10 +14,10 @@ source build/envsetup.sh
 mka clean
 [ $? -ne 0 ] && { echo "Error at make clean"; exit 1; }
 
-breakfast $1
+breakfast oneplus3
 
 KEYS_DIR=/home/build/android/.android-certs
-OUT=/home/build/android/out/target/product/$1
+OUT=/home/build/android/out/target/product/oneplus3
 TARGET_FILES_SIGNED=lineage-$(get_build_var LINEAGE_VERSION)-signed-target_files.zip
 OTA_PACKAGE=lineage-$(get_build_var LINEAGE_VERSION)-signed.zip
 
