@@ -1,8 +1,11 @@
 #!/bin/bash
 
+[ "$1" == '' ] && { echo "Device Parameter needed"; exit 1; }
+
 # Build LAOS for different devices
 START=$(date)
 SECONDS=0
+DEVICE=$1
 
 cd /home/build/android/
 pwd
@@ -14,10 +17,10 @@ source build/envsetup.sh
 mka clean
 [ $? -ne 0 ] && { echo "Error at make clean"; exit 1; }
 
-breakfast $1
+breakfast $DEVICE
 
 KEYS_DIR=/home/build/android/.android-certs
-OUT=/home/build/android/out/target/product/$1
+OUT=/home/build/android/out/target/product/$DEVICE
 TARGET_FILES_SIGNED=lineage-$(get_build_var LINEAGE_VERSION)-signed-target_files.zip
 OTA_PACKAGE=lineage-$(get_build_var LINEAGE_VERSION)-signed.zip
 
