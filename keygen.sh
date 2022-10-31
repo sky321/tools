@@ -6,7 +6,7 @@ subject='/C=US/ST=California/L=Mountain View/O=Android/OU=Android/CN=Android/ema
 
 # keys generate
 mkdir $KEYS_DIR
-for x in releasekey platform shared media testkey; do ./development/tools/make_key $KEYS_DIR/$x "$subject"; done
+for x in releasekey platform shared media networkstack testkey; do ./development/tools/make_key $KEYS_DIR/$x "$subject"; done
 [ $? -ne 0 ] && { echo "Error at make keys"; exit 1; }
 
 # use new keys in common.mk for vendor (dev-keys)
