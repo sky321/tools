@@ -1,4 +1,4 @@
-android/.repo/local_manifest anlegen
+android/.repo/local_manifests anlegen
 
 tools/oneplus3.xml
 tools/fp2.xml
