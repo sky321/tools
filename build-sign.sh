@@ -29,12 +29,12 @@ mka target-files-package otatools
 [ $? -ne 0 ] && { echo "Error at make target files"; exit 1; }
 
 # sign all the APKs
-croot
-./build/tools/releasetools/sign_target_files_apks -o -d $KEYS_DIR $OUT/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $TARGET_FILES_SIGNED
-[ $? -ne 0 ] && { echo "Error at sign APKs"; exit 1; }
+#croot
+#./build/tools/releasetools/sign_target_files_apks -o -d $KEYS_DIR $OUT/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $TARGET_FILES_SIGNED
+#[ $? -ne 0 ] && { echo "Error at sign APKs"; exit 1; }
 
 # generate the signed installable OTA zip
-./build/tools/releasetools/ota_from_target_files -k $KEYS_DIR/releasekey --block --backup=true $TARGET_FILES_SIGNED $OTA_PACKAGE
+#./build/tools/releasetools/ota_from_target_files -k $KEYS_DIR/releasekey --block --backup=true $TARGET_FILES_SIGNED $OTA_PACKAGE
 
 END=$(date)
 elapsedseconds=$SECONDS
