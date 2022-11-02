@@ -26,7 +26,7 @@ mka target-files-package otatools
 [ $? -ne 0 ] && { echo "Error at make target files"; exit 1; }
 
 # sign all the APKs
-croot
+cd /home/build/android
 ./build/tools/releasetools/sign_target_files_apks -o -d $KEYS_DIR $OUT/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $TARGET_FILES_SIGNED
 [ $? -ne 0 ] && { echo "Error at sign APKs"; exit 1; }
 
