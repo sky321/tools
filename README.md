@@ -7,6 +7,7 @@
 			- std test-keys, für dev-keys (vendor/lineage/config/common.mk)
 		- sign-img.sh = nachträglich sign der images (test-keys) mit eigenen keys (release-keys)
 		- build-sign.sh = repo sync und build des images (signed image release key)
+		- build-devices.sh = generic build without repo sync, clean, breakfast
 		- lineage-test2official.zip = migration von unofficial zu official
 		- lineage-official2test.zip = migration von official zu unofficial
 			- update-binary = script um key zu überschreiben
