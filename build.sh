@@ -1,6 +1,8 @@
 #!/bin/bash
 
-# Build LAOS for Oneplus 3/3T
+[ "$1" == '' ] && { echo "Device Parameter needed"; exit 1; }
+
+# Build LAOS
 cd /home/build/android/
 pwd
 
@@ -14,5 +16,5 @@ mka clean
 #tristate button & Gallery2
 #repopick 215212 -f
 
-breakfast oneplus3
-brunch oneplus3
+breakfast $1
+brunch $1

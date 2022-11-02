@@ -1,11 +1,13 @@
 #!/bin/bash
 
+[ "$1" == '' ] && { echo "Device Parameter needed"; exit 1; }
+
 KEYS_DIR=/home/build/android/.android-certs
-OUT=/home/build/android/out/target/product/oneplus3
+OUT=/home/build/android/out/target/product/$1
 
 # gen target files (only if not run direct after build)
 #source build/envsetup.sh
-#breakfast oneplus3
+#breakfast $1
 #mka target-files-package otatools
 # oder auch
 #mka target-files-package dist
