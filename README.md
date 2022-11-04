@@ -21,7 +21,7 @@
 
 - lineage4microg CICD Methode 
     - cp tools/cicd* .
-    - mv cicd-build.sh docker-lineage-cicd/
+    - sudo chmod +x cicd*.sh
     - sudo ./cicd-docker-init.sh
 
 - weiter mit alter Methode 
