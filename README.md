@@ -18,7 +18,14 @@
 
 - Tools clonen
 	- git clone https://github.com/sky321/tools.git
-	- cp tools/docker-init.sh .
+
+- lineage4microg CICD Methode 
+    - cp tools/cicd* .
+    - mv cicd-mkdir.sh docker-lineage-cicd/
+    - sudo ./cicd-docker-init.sh
+    - 
+- weiter mit alter Methode 
+	- cp tools/docker-init.sh
 	- chmod +x *sh
 	- sudo ./docker-init.sh
 
