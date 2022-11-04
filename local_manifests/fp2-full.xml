@@ -1,0 +1,6 @@
+<manifest>
+    <remote fetch="https://github.com/" name="github2" />
+    <project name="LineageOS/android_device_fairphone_FP2" path="device/fairphone/FP2" remote="github2" revision="lineage-18.1" />
+    <project name="LineageOS/android_kernel_fairphone_msm8974" path="kernel/fairphone/msm8974" remote="github2" revision="lineage-18.1" />
+    <project name="TheMuppets/proprietary_vendor_fairphone" path="vendor/fairphone" remote="github2" revision="lineage-18.1" />
+</manifest>
