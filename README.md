@@ -29,16 +29,10 @@
     - edit cicd-build.sh as needed
     - sudo ./cicd-docker-init.sh
 
-- weiter mit alter Methode 
+- ALTE Methode 
 	- cp tools/docker-init.sh
 	- chmod +x *sh
 	- sudo ./docker-init.sh
-
-- Docker Container erstellen
-	- Mit docker-init.sh aus tools
-		- git clone https://github.com/sky321/docker-lineageos.git
-		- cd docker-lineageos
-		- sudo ./run.sh
 
 - repo initialisieren
 	- repo init -u https://github.com/LineageOS/android.git -b lineage-18.1
