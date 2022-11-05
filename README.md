@@ -15,6 +15,10 @@
 	- local_manifests = ordner mit verschiedenen manifest.xml
 		- ordner in .repo erstellen und passendes xml rein kopieren
 	- docker-init.sh = erstellt docker container zum bauen der images
+	- cicd-docker-init.sh = initialisiert docker environmet für lineage4microg cicd umgebung
+	- cicd-mkdir.sh = muss vor build laufen um Verzeichnisse anzulegen 
+	- cicd-build.sh = baut image abhängig von den Parametern
+	
 
 - Tools clonen
 	- git clone https://github.com/sky321/tools.git
